@@ -1,0 +1,152 @@
+body {
+    background: linear-gradient(to right, #4ca1af, #c4e0e5); 
+    color: rgb(168, 120, 30);
+}
+
+h1 {
+    text-align: center;
+}
+
+.gameContainer {
+    width: 50vw;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gameBody {
+    width: 190px;
+    height: 190px;
+    background: orange;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 5px;
+    z-index: 0;
+    border-radius: 15px;
+}
+
+.err {
+    color: red;
+}
+
+.cleared {
+    color: green;
+}
+
+.boxContainer {
+    width: 190px;
+    height: 16px;
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius:15px;
+    
+}
+
+.box {
+    width: 10px;
+    height: 10px;
+    margin: 0px;
+}
+
+.errorBox {
+    text-align: center;
+}
+
+.winner {
+    display: none;
+    position: absolute;
+    font-size: 3rem;
+    z-index: 2;
+    left: 25%;
+    top: 20%;
+    background:green;
+    padding: 1rem;
+}
+
+.cover {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: grey;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.btnContainer {
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.solver {
+    width: 10vw;
+    height: 5vh;
+    font-size:1rem;
+    color: rgb(168, 120, 30);
+
+}
+
+.boxCollide {
+    text-align: center;
+}
+
+.holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+@keyframes btnHoverAnim {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+@media only screen and (min-width: 768px){
+.gameContainer {
+    justify-content: space-evenly;
+    width: 70%;
+    height: 70vh;
+}
+
+.solver:hover {
+    transform: translateY(-15px);
+    
+}
+
+.gameBody {
+    width: 302px;
+    height: 310px;
+}
+
+.box {
+    width: 22.5px;
+    height: 22.5px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.boxContainer {
+    width: 300px;
+    height: 32px;
+}
+
+    
+}
