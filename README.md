@@ -5,3 +5,4 @@ solver algorithm works fine, had fun with this one, took me a long while conside
 
 text boxes are sanitized for integer inputs and single chars, in the future will add a you win view if solv btn is not used, and have it create games for playing by solving the puzzle then removing 80% of the digits.
 
+Check out the site [here](https://lambent-granita-d2c356.netlify.app/).
