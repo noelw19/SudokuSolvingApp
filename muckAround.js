@@ -30,28 +30,12 @@ window.addEventListener('DOMContentLoaded', function() {
 
     let clearBtn = document.querySelector('.clear')
             clearBtn.addEventListener('click', () => {
-                for (let i = 0; i < SBox.length; i ++) {
-                    SBox[i].value = ''
-                }
-                solverBtn.style.background = 'lightgrey';
-                solverBtn.style.color = 'orange';
-                solverBtn.textContent = 'Solve'
+                location.reload()
             })
     
 
     solverBtn.addEventListener('click', () => {
-        // useVal = getRandomInt(1, 9)
-        let count = 0
-        for(let i = 0; i < SBox.length; i ++) {
-            if(SBox[i].value) count++
-            if(!SBox[i].value) break;
-        }
-        if(count === SBox.length) {
-            solverBtn.style.background = 'red';
-            solverBtn.style.color = 'black';
-            solverBtn.textContent = 'Failed all boxes full'
-            
-        } else {
+        
 
             for(let i = 0; i < SBox.length; i ++) {
                 if(SBox[i].value) {
@@ -69,7 +53,7 @@ window.addEventListener('DOMContentLoaded', function() {
             for(let i = 0; i < SBox.length; i ++) {
                 SBox[i].value = newBoard[i]
             }
-        }
+        
         // SBox[getRandomInt(0, 80)].value = useVal
         // boardToSolve = []
 
@@ -79,6 +63,7 @@ window.addEventListener('DOMContentLoaded', function() {
     for(let i = 0; i < SBox.length; i ++) {
         SBox[i].classList.add(i);
         SBox[i].value = '';
+
 
         SBox[i].addEventListener('input', function(e) {
             // console.log('started');
