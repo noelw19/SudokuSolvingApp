@@ -18,7 +18,7 @@ h1 {
 }
 
 .gameBody {
-    width: 190px;
+    width: 170px;
     height: 190px;
     background: orange;
     display: grid;
@@ -37,7 +37,7 @@ h1 {
 }
 
 .boxContainer {
-    width: 190px;
+    width: 170px;
     height: 16px;
     display: flex;
     justify-content: space-around;
