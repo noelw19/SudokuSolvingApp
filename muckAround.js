@@ -29,13 +29,13 @@ window.addEventListener('DOMContentLoaded', function() {
     
 
     solverBtn.addEventListener('click', () => {
-        useVal = getRandomInt(1, 9)
+        // useVal = getRandomInt(1, 9)
 
-        for(let i = 0; i < SBox.length; i ++) {
-            SBox[i].value = ''
-        }
-        SBox[getRandomInt(0, 80)].value = useVal
-        boardToSolve = []
+        // for(let i = 0; i < SBox.length; i ++) {
+        //     SBox[i].value = ''
+        // }
+        // SBox[getRandomInt(0, 80)].value = useVal
+        // boardToSolve = []
 
 
         for(let i = 0; i < SBox.length; i ++) {

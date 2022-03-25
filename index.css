@@ -9,17 +9,17 @@ h1 {
 
 .gameContainer {
     width: 100vw;
-    height: 250px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-
+    margin-bottom: 1rem;
 }
 
 .gameBody {
-    width: 210px;
-    height: 190px;
+    width: 250px;
+    height: 210px;
     background: orange;
     display: grid;
     grid-template-columns: auto;
@@ -37,8 +37,8 @@ h1 {
 }
 
 .boxContainer {
-    width: 210px;
-    height: 19px;
+    width: 250px;
+    height: 22px;
     display: flex;
     justify-content: space-around;
 
