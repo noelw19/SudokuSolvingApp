@@ -1,6 +1,6 @@
 body {
     background: linear-gradient(to right, #4ca1af, #c4e0e5); 
-    color: rgb(168, 120, 30);
+    color: black;
 }
 
 h1 {
@@ -90,11 +90,11 @@ h1 {
     margin-bottom: 1rem;
 }
 
-.solver {
+.btn {
     width: 30%;
     height: 30%;
     font-size:1rem;
-    color: rgb(168, 120, 30);
+    color: orange;
     padding: 10px;
 }
 
@@ -113,26 +113,17 @@ h1 {
     width: 70vw;
 }
 
-
-
-@keyframes btnHoverAnim {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: translateY(-15px);
-    }
-}
-
 @media only screen and (min-width: 768px){
 .gameContainer {
     justify-content: space-evenly;
     width: 70%;
-    height: 70vh;
+    height: 100%;
 }
 
 .solver:hover {
-    transform: translateY(-15px);
+   background: orange;
+   border: black;
+   color: black;
     
 }
 

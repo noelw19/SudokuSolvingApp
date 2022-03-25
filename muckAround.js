@@ -4,7 +4,7 @@ let errorBox = document.querySelector('.errorBox');
 let boxCollideDiv = document.querySelector('.boxCollide');
 let winText = document.querySelector('.winner');
 let cover = document.querySelector('.cover');
-let checkerBtn = document.querySelector('.checker');
+let BtnCont = document.querySelector('.btnContainer');
 let solverBtn = document.querySelector('.solver');
 
 
@@ -26,34 +26,54 @@ function getRandomInt(min, max) {
 window.addEventListener('DOMContentLoaded', function() {
     let boardToSolve = []
     let counter = 8
+
+
+    let clearBtn = document.querySelector('.clear')
+            clearBtn.addEventListener('click', () => {
+                for (let i = 0; i < SBox.length; i ++) {
+                    SBox[i].value = ''
+                }
+                solverBtn.style.background = 'lightgrey';
+                solverBtn.style.color = 'orange';
+                solverBtn.textContent = 'Solve'
+            })
     
 
     solverBtn.addEventListener('click', () => {
         // useVal = getRandomInt(1, 9)
+        let count = 0
+        for(let i = 0; i < SBox.length; i ++) {
+            if(SBox[i].value) count++
+            if(!SBox[i].value) break;
+        }
+        if(count === SBox.length) {
+            solverBtn.style.background = 'red';
+            solverBtn.style.color = 'black';
+            solverBtn.textContent = 'Failed all boxes full'
+            
+        } else {
 
-        // for(let i = 0; i < SBox.length; i ++) {
-        //     SBox[i].value = ''
-        // }
+            for(let i = 0; i < SBox.length; i ++) {
+                if(SBox[i].value) {
+                    SBox[i].style.background = 'green';
+                    SBox[i].style.color = 'white';
+                }
+                boardToSolve.push(!SBox[i].value ? null : parseInt(SBox[i].value))
+                
+            }
+            
+            boardToSolve = sliceIntoChunks(boardToSolve, 9)
+            
+            let newBoard = solve(boardToSolve).flat(1)
+            boardToSolve = newBoard
+            for(let i = 0; i < SBox.length; i ++) {
+                SBox[i].value = newBoard[i]
+            }
+        }
         // SBox[getRandomInt(0, 80)].value = useVal
         // boardToSolve = []
 
 
-        for(let i = 0; i < SBox.length; i ++) {
-            if(SBox[i].value) {
-                SBox[i].style.background = 'green';
-                SBox[i].style.color = 'white';
-            }
-            boardToSolve.push(!SBox[i].value ? null : parseInt(SBox[i].value))
-            
-        }
-        
-        boardToSolve = sliceIntoChunks(boardToSolve, 9)
-        
-        let newBoard = solve(boardToSolve).flat(1)
-        boardToSolve = newBoard
-        for(let i = 0; i < SBox.length; i ++) {
-            SBox[i].value = newBoard[i]
-        }
     })
 
     for(let i = 0; i < SBox.length; i ++) {
