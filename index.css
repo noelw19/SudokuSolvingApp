@@ -109,6 +109,10 @@ h1 {
     flex-direction: column;
 }
 
+.textStuff {
+    width: 70vw;
+}
+
 
 
 @keyframes btnHoverAnim {

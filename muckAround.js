@@ -39,6 +39,10 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
         for(let i = 0; i < SBox.length; i ++) {
+            if(SBox[i].value) {
+                SBox[i].style.background = 'green';
+                SBox[i].style.color = 'white';
+            }
             boardToSolve.push(!SBox[i].value ? null : parseInt(SBox[i].value))
             
         }
@@ -55,10 +59,6 @@ window.addEventListener('DOMContentLoaded', function() {
     for(let i = 0; i < SBox.length; i ++) {
         SBox[i].classList.add(i);
         SBox[i].value = '';
-
-        SBox[i].addEventListener('click', (e) => {
-            console.log(e.target.classList[1])
-        })
 
         SBox[i].addEventListener('input', function(e) {
             // console.log('started');
