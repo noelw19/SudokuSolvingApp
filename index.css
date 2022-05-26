@@ -1,19 +1,21 @@
 body {
     background: linear-gradient(to right, #4ca1af, #c4e0e5); 
     color: black;
+    font-family: 'Macondo', cursive;
 }
 
 h1 {
     text-align: center;
 }
 
+
 .gameContainer {
     width: 100vw;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: column-reverse;
+    flex-direction: row;
     margin-bottom: 1rem;
 }
 
@@ -25,11 +27,12 @@ h1 {
     grid-template-columns: auto;
     padding: 5px;
     z-index: 0;
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 
 .err {
     color: red;
+    font-size: 2rem;
 }
 
 .cleared {
@@ -52,6 +55,7 @@ h1 {
     width: 14px;
     height: 14px;
     margin: 0px;
+    background: white;
 }
 
 .errorBox {
@@ -88,13 +92,14 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
+    color: black;
+
 }
 
 .btn {
-    width: 30%;
+    width: 300px;
     height: 30%;
     font-size:1rem;
-    color: orange;
     padding: 10px;
 }
 
@@ -111,38 +116,62 @@ h1 {
 
 .textStuff {
     width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media only screen and (min-width: 768px){
-.gameContainer {
-    justify-content: space-evenly;
-    width: 70%;
-    height: 100%;
-}
 
-.solver:hover {
-   background: orange;
-   border: black;
-   color: black;
-    
-}
 
-.gameBody {
-    width: 302px;
-    height: 310px;
-}
+    .holder {
+        width: 100vw;
+        height: auto;
+    }
 
-.box {
-    width: 22.5px;
-    height: 22.5px;
-    text-align: center;
-    font-size: 1.5rem;
-}
+    .gameContainer {
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+    }
 
-.boxContainer {
-    width: 300px;
-    height: 32px;
-}
+    .btn:hover {
+    background: orange;
+    border: black;
+    color: black;
+    border-radius: 15px;
+        
+    }
 
+    .gameBody {
+        width: 302px;
+        height: 310px;
+    }
+
+    .box {
+        width: 22.5px;
+        height: 22.5px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .boxContainer {
+        width: 300px;
+        height: 32px;
+    }
+
+    .textStuff {
+        width: 38%;
+        height: auto;
+    }
+
+    .textStuff > p {
+        width: 70%;
+    }
+
+    .btnContainer {
+        display: flex;
+        justify-content: center;
+    }
     
 }

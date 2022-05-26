@@ -27,12 +27,22 @@ window.addEventListener('DOMContentLoaded', function() {
     let boardToSolve = []
     let counter = 8
 
-
-    let clearBtn = document.querySelector('.clear')
-            clearBtn.addEventListener('click', () => {
-                location.reload()
-            })
+    let inputDataCollision = (str) => {
+        errorBox.classList.add('err');
+        errorBox.textContent = str;
+        setTimeout(() => {
+            errorBox.textContent = '';
+            errorBox.classList.remove('err');
+        }, 4000)
+    }
     
+    let addClearBtn = () => {
+        BtnCont.innerHTML = '<button class="btn clear">Clear</button>'
+        let clearBtn = document.querySelector('.clear')
+        clearBtn.addEventListener('click', () => {
+            location.reload()
+        })
+    }
 
     solverBtn.addEventListener('click', () => {
         
@@ -41,22 +51,41 @@ window.addEventListener('DOMContentLoaded', function() {
                 if(SBox[i].value) {
                     SBox[i].style.background = 'green';
                     SBox[i].style.color = 'white';
+                    SBox[i].style.borderColor = 'white';
                 }
                 boardToSolve.push(!SBox[i].value ? null : parseInt(SBox[i].value))
                 
             }
+
+            let currentBoardBeforeBeingSolved = [...boardToSolve];
+
+            
             
             boardToSolve = sliceIntoChunks(boardToSolve, 9)
-            
-            let newBoard = solve(boardToSolve).flat(1)
-            boardToSolve = newBoard
-            for(let i = 0; i < SBox.length; i ++) {
-                SBox[i].value = newBoard[i]
-            }
-        
-        // SBox[getRandomInt(0, 80)].value = useVal
-        // boardToSolve = []
 
+            let newBoard = solve(boardToSolve)
+            console.log(newBoard)
+            if(newBoard) {
+                newBoard = newBoard.flat(1);
+                boardToSolve = newBoard
+                for(let i = 0; i < SBox.length; i ++) {
+                    SBox[i].value = boardToSolve[i]
+                }
+                addClearBtn()
+            }
+            else {
+                inputDataCollision('Error! Numbers input by you are colliding please check and try again.')
+                boardToSolve = []
+                for(let i = 0; i < SBox.length; i ++) {
+                    if(SBox[i].value) {
+                        SBox[i].style.background = 'white';
+                        SBox[i].style.borderColor = 'red';
+                        SBox[i].style.color = 'red';
+                    }
+                    
+                }
+            }
+            
 
     })
 
